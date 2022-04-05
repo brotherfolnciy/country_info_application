@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <EditText
+        android:id="@+id/city_name_search_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Найти страну"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87" />
+
+    <Button
+        android:id="@+id/get_country_button"
+        android:layout_width="162dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:text="Найти"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city_name_search_edit_text" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/status_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/status_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toTopOf="@+id/status_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_search" />
+
+        <TextView
+            android:id="@+id/status_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Введите запрос"
+            android:textColor="#A3A3A3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/result_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:visibility="invisible">
+
+        <TextView
+            android:id="@+id/capital_value_text_view"
+            android:layout_width="64dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/capital_label_text_view"
+            app:layout_constraintTop_toTopOf="@+id/capital_label_text_view" />
+
+        <TextView
+            android:id="@+id/languages_label_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Языки:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/area_label_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/area_label_text_view" />
+
+        <TextView
+            android:id="@+id/country_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_marginStart="12dp"
+            android:text="Страна"
+            android:textColor="#515151"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/flag_image_view"
+            app:layout_constraintTop_toTopOf="@+id/flag_image_view" />
+
+        <TextView
+            android:id="@+id/population_label_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginTop="12dp"
+            android:text="Население:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/flag_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/flag_image_view" />
+
+        <TextView
+            android:id="@+id/area_value_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/area_label_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/population_label_text_view" />
+
+        <TextView
+            android:id="@+id/population_value_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/population_label_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/flag_image_view" />
+
+        <TextView
+            android:id="@+id/languages_value_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/languages_label_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/area_label_text_view" />
+
+        <TextView
+            android:id="@+id/area_label_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:text="Площадь:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/population_label_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/population_label_text_view" />
+
+        <TextView
+            android:id="@+id/capital_label_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:text="Столица:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/country_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/country_text_view" />
+
+        <ImageView
+            android:id="@+id/flag_image_view"
+            android:layout_width="135dp"
+            android:layout_height="135dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/ic_launcher_background" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
